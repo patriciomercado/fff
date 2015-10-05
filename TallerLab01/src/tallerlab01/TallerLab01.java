@@ -13,7 +13,7 @@ public class TallerLab01 {
         String cadena = ("");
         int producto = 1;
         int producto2 = 1;
-        int num0=0,num1=0,num2=0,num3=0,num4=0,num5=0,num6=0,num7=0,num8=0,num9=0,ceros = 0;
+        int num0=0,num1=0,num2=0,num3=0,num4=0,num5=0,num6=0,num7=0,num8=0,num9=0;
         for (int i=0;i<n;i++){
             for (int z=0;z<n;z++){
                 matriz [i][z] = (int)Math.floor(Math.random()*(0-10)+10);
@@ -22,14 +22,14 @@ public class TallerLab01 {
             cadena = cadena + ("\n");
         }
         for (int i=0;i<n;i++){
+            int inv=n-1;
+            producto2=producto2*matriz[i][inv];
+            inv--;
             for (int z=0;z<n;z++){
                 if (i==z){
                 producto = producto * matriz[i][z];
                 }
-                    
-                if(matriz[i][z]==0){
-                    ceros = ceros +1;
-                }
+                producto2=producto2*matriz[i][inv];    
                 switch (matriz[i][z]){
                     case 0: num0=num0+1;
                         break;
@@ -53,13 +53,16 @@ public class TallerLab01 {
                         break;  
                 }
                 
-            } 
+            }
         }
-
-        System.out.println("");
+        producto=producto+producto2;
+        System.out.println("La matriz es ");
         System.out.println(cadena);
-        System.out.println("El producto de la diagonal es "+producto);
+        System.out.println("El resultado del producto de la diagonal con el producto de la diagonal invertida es "+producto);
         if (num0>num1 && num0>num2 && num0>num3 && num0>num4 && num0>num5 && num0>num6 && num0>num7 && num0>num8 && num0>num9){
+            if(num0>(n*n)){
+                System.out.println("La Matriz es CERO");
+            }
             System.out.println("El numero que mas se repite es es 0");
         }
         else{
@@ -105,6 +108,7 @@ public class TallerLab01 {
                 }
             }
         }
+        
     }
     
 }
