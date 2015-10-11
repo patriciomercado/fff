@@ -26,11 +26,11 @@ public class SimuladorCalculadora {
                      break;
             case 3: var1 = Integer.decode(JOptionPane.showInputDialog(null,"Ingrese el primer numero: "));
                     var2 = Integer.decode(JOptionPane.showInputDialog(null,"Ingrese el segundo numero: "));
-                    JOptionPane.showMessageDialog(null,"El resultado de la División entre "+var1+" con "+var2+" es: "+(var1*var2)+"\n");
+                    JOptionPane.showMessageDialog(null,"El resultado de la multiplicación entre "+var1+" con "+var2+" es: "+(var1*var2)+"\n");
                      break;
             case 4: var1 = Integer.decode(JOptionPane.showInputDialog(null,"Ingrese el primer numero: "));
                     var2 = Integer.decode(JOptionPane.showInputDialog(null,"Ingrese el segundo numero: "));
-                    JOptionPane.showMessageDialog(null,"El resultado de la multiplicación entre "+var1+" con "+var2+" es: "+(var1/var2)+"\n");
+                    JOptionPane.showMessageDialog(null,"El resultado de la División entre "+var1+" con "+var2+" es: "+(var1/var2)+"\n");
                      break;
             case 0: JOptionPane.showMessageDialog(null,"Adios");
                      break;
