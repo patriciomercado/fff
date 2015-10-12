@@ -20,10 +20,10 @@ public class TareaAyudantia2 {
         int goles;
         int partidosJugados;
         
-        System.out.println("Cuatos partidos jugo el equipo?");
+        System.out.println("Cuantos partidos jugó el equipo?");
         partidosJugados = sc.nextInt();
         
-        System.out.println("Cuatos goles compró el equipo?");
+        System.out.println("Cuantos goles compró el equipo?");
         goles = sc.nextInt();  
         
         //Inicio de las matrizes original y la modificada
