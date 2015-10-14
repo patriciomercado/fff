@@ -103,27 +103,19 @@ public class CalculadoraConMetodos {
     }
 
     public static int suma(int num1, int num2) {
-        int proc;
-        proc = num1 + num2;
-        return proc;
+        return (num1+num2);
     }
 
     public static int rest(int num1, int num2) {
-        int proc;
-        proc = num1 - num2;
-        return proc;
+        return (num1-num2);
     }
 
     public static double div(double num1, double num2) {
-        double proc;
-        proc = num1 / num2;
-        return proc;
+        return (num1 / num2);
     }
 
     public static int mult(int num1, int num2) {
-        int proc;
-        proc = num1 * num2;
-        return proc;
+        return num1 * num2;
     }
 
     public static int may(int num1, int num2) {
