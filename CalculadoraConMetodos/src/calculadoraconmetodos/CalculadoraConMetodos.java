@@ -6,6 +6,7 @@
 package calculadoraconmetodos;
 
 import java.util.*;
+
 /**
  *
  * @author yojvn
@@ -22,136 +23,138 @@ public class CalculadoraConMetodos {
         int num1 = 0;
         int num2 = 0;
         boolean salir = false;
-        
-        while(salir == false){
+
+        while (salir == false) {
 
             menu();
-            do{ 
-                try{
+            do {
+                try {
                     System.out.println("Número opcion: ");
                     opcion = sc.nextInt();
-                    
+
                     salir = false;
-                } catch(InputMismatchException exc) {
+                } catch (InputMismatchException exc) {
                     sc.nextLine();
                     System.out.println("Debe introducir solo numeros. \n Intente nuevamente\n");
-                    salir=true;
+                    salir = true;
                 }
             } while (salir);
-            if(opcion!=7){
+            if (opcion != 7) {
                 num1 = leer();
                 num2 = leer();
             }
-            switch (opcion){
-                
-                case 1: mostrar(Integer.toString(suma(num1,num2)));
-                        break;
-                case 2: mostrar(Integer.toString(rest(num1,num2)));
-                        break;
-                case 4: mostrar(Double.toString(div(num1,num2)));
-                        break;
-                case 3: mostrar(Integer.toString(mult(num1,num2)));
-                        break;
-                case 5: mostrar(Integer.toString(may(num1,num2)));
-                        break;
-                case 6: mostrar(Long.toString(pot(num1,num2)));
-                        break;
-                case 7: salir = salir(salir);
-                        break;
-                default: System.out.println("Opciín no valida, Reingrese");
+            switch (opcion) {
+
+                case 1:
+                    mostrar(Integer.toString(suma(num1, num2)));
+                    break;
+                case 2:
+                    mostrar(Integer.toString(rest(num1, num2)));
+                    break;
+                case 4:
+                    mostrar(Double.toString(div(num1, num2)));
+                    break;
+                case 3:
+                    mostrar(Integer.toString(mult(num1, num2)));
+                    break;
+                case 5:
+                    mostrar(Integer.toString(may(num1, num2)));
+                    break;
+                case 6:
+                    mostrar(Long.toString(pot(num1, num2)));
+                    break;
+                case 7:
+                    salir = salir(salir);
+                    break;
+                default:
+                    System.out.println("Opciín no valida, Reingrese");
             }
         }
     }
-      
-    public static void menu (){   
-            System.out.print("Buenos Dias! Ingrese el Numero de la operación ");
-            System.out.println("que desee realizar: ");
-            System.out.println("1) Sumar 2 Números.");
-            System.out.println("2) restar 2 Números.");
-            System.out.println("3) Multiplicar 2 Números.");
-            System.out.println("4) Dividir 2 Números. ");
-            System.out.println("5) Calcular el mayor de 2 Números. ");
-            System.out.println("6) Calcular la potencia entre 2 Números. ");
-            System.out.println("7) Salir");
+
+    public static void menu() {
+        System.out.print("Buenos Dias! Ingrese el Numero de la operación ");
+        System.out.println("que desee realizar: ");
+        System.out.println("1) Sumar 2 Números.");
+        System.out.println("2) restar 2 Números.");
+        System.out.println("3) Multiplicar 2 Números.");
+        System.out.println("4) Dividir 2 Números. ");
+        System.out.println("5) Calcular el mayor de 2 Números. ");
+        System.out.println("6) Calcular la potencia entre 2 Números. ");
+        System.out.println("7) Salir");
     }
-    
-    
-    public static int leer (){
+
+    public static int leer() {
         Scanner sc = new Scanner(System.in);
         int num = 0;
         boolean salir = false;
-            do{ 
-                try{
-                    System.out.println("Ingrese un Número: ");
-                    num = sc.nextInt();     
-                    salir = false;
-                } catch(InputMismatchException exc) {
-                    sc.nextLine();
-                    System.out.println("Debe introducir solo numeros. \n Intente nuevamente\n");
-                    salir=true;
-                }
-            } while (salir);  
+        do {
+            try {
+                System.out.println("Ingrese un Número: ");
+                num = sc.nextInt();
+                salir = false;
+            } catch (InputMismatchException exc) {
+                sc.nextLine();
+                System.out.println("Debe introducir solo numeros. \n Intente nuevamente\n");
+                salir = true;
+            }
+        } while (salir);
         return num;
     }
-    
-    
-    public static int suma (int num1, int num2){
+
+    public static int suma(int num1, int num2) {
         int proc;
         proc = num1 + num2;
         return proc;
     }
-    
-    
-    public static int rest (int num1, int num2){
+
+    public static int rest(int num1, int num2) {
         int proc;
         proc = num1 - num2;
         return proc;
     }
-    
-    
-    public static double div (double num1, double num2){
+
+    public static double div(double num1, double num2) {
         double proc;
         proc = num1 / num2;
         return proc;
     }
-    
-    
-    public static int mult (int num1, int num2){
+
+    public static int mult(int num1, int num2) {
         int proc;
         proc = num1 * num2;
         return proc;
     }
-    
-    public static int may (int num1, int num2){
+
+    public static int may(int num1, int num2) {
         int mayor;
-        
-        if(num1 > num2){
+
+        if (num1 > num2) {
             mayor = num1;
         } else {
             mayor = num2;
         }
-        
+
         return mayor;
     }
-    
-    public static long pot (int num1, int num2){
+
+    public static long pot(int num1, int num2) {
         long poten = num1;
-        
-        for(int i = 0; i < num2; i++){
+
+        for (int i = 0; i < num2; i++) {
             poten = poten * num1;
         }
-        
-        return(poten);
+
+        return (poten);
     }
-    
-    
-    public static void mostrar (String n){
-        System.out.println("El resultado es: "+n);
-        
+
+    public static void mostrar(String n) {
+        System.out.println("El resultado es: " + n);
+
     }
-    
-    public static boolean salir (boolean bool){
+
+    public static boolean salir(boolean bool) {
         bool = true;
-        return(bool);
+        return (bool);
     }
 }
