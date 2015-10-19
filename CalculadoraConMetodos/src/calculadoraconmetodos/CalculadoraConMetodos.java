@@ -51,8 +51,11 @@ public class CalculadoraConMetodos {
                 case 2:
                     mostrar(Integer.toString(rest(num1, num2)));
                     break;
-                case 4:
-                    mostrar(Double.toString(div(num1, num2)));
+                case 4: if(num2 != 0){
+                            mostrar(Double.toString(div(num1, num2)));
+                        } else {
+                            System.out.println("El Dividendo no puede ser cero!!!");
+                        }
                     break;
                 case 3:
                     mostrar(Integer.toString(mult(num1, num2)));
