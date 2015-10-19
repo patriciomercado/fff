@@ -122,15 +122,7 @@ public class CalculadoraConMetodos {
     }
 
     public static int may(int num1, int num2) {
-        int mayor;
-
-        if (num1 > num2) {
-            mayor = num1;
-        } else {
-            mayor = num2;
-        }
-
-        return mayor;
+        return (Math.max(num1,num2));
     }
 
     public static long pot(int num1, int num2) {
