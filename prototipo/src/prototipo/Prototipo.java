@@ -8,6 +8,7 @@ import java.util.*;
 public class Prototipo {
 
     public static void main(String[] args) {
+        
         //Main del programa principal, de momento con salidas en consola las cuales se reemplazaran con JOption y JFrame
         //Se solicita el numero de equipos que participaran en X torneo
         System.out.println("Especifique cantidad de equipos a participar: ");
