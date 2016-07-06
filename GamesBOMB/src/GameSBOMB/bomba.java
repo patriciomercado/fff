@@ -6,6 +6,7 @@
 package GameSBOMB;
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,18 +15,21 @@ import java.util.Random;
 public class bomba extends javax.swing.JFrame {
     
     Random rand = new Random();
-    ventanaPrincipal inicio = new ventanaPrincipal();
-    juego jugar = new juego();
     jugadores archivo = new jugadores();
     
     private int lock = 0;
+    private int lockexit = 1;
     private int exit = 0;
+    private int preg = 0;
     private int player;
+    private int limit = 0;
     /**
      * Creates new form bomba
      */
-    public bomba(int j) {
+    public bomba(int j, int l, int pre) {
         this.player = j;
+        this.limit = l;
+        this.preg = pre;
         initComponents();
     }
 
@@ -49,7 +53,7 @@ public class bomba extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/bomb.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Bomb_Artwork.png"))); // NOI18N
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +63,7 @@ public class bomba extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(550, 130, 160, 210);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/bomb.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Bomb_Artwork.png"))); // NOI18N
         jButton2.setText("jButton2");
         jButton2.setPreferredSize(new java.awt.Dimension(680, 460));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +74,7 @@ public class bomba extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(100, 130, 160, 210);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/bomb.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Bomb_Artwork.png"))); // NOI18N
         jButton3.setText("jButton3");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +100,7 @@ public class bomba extends javax.swing.JFrame {
         getContentPane().add(jButton4);
         jButton4.setBounds(310, 480, 180, 50);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/ghostblade_by_wlop-d7jiqua.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 800, 600);
@@ -106,54 +110,73 @@ public class bomba extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        rodar(player);
+        rodar(player, 1);
     }//GEN-LAST:event_jButton2ActionPerformed
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        rodar(player);
+        rodar(player, 2);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        rodar(player); 
+        rodar(player, 3); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    if (exit == 1){
-        if(archivo.cantPlayers() != 0){
-            jugar.setJ( archivo.cantPlayers2() );
+        salir();
+    }//GEN-LAST:event_jButton4ActionPerformed
+    
+    private void salir (){
+        juego jugar = new juego(player, preg);
+        if (exit == 1){
+        if(archivo.cantPlayers() != 1){
+            jugar.setJ( limit);
             jugar.setVisible(true);
             dispose();
         }else{
-        inicio.setVisible(true);
-        dispose();
+            ventanaFinal gameover = new ventanaFinal((archivo.winner()+1));
+            gameover.setVisible(true);
+            dispose();
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Debes tocar una Bomba primero!!!");
         }
     }
-    else {
-        jugar.setJ( archivo.cantPlayers2() );
-        System.out.println("cantidad de players"+archivo.cantPlayers2());
-        jugar.setVisible(true);
-        dispose();
-    }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     
-    public void rodar(int player){
+    private void rodar(int player, int boton){
         if (lock == 0){
         boolean value = rand.nextBoolean();
         
         if (value == true) {
             jLabel1.setText("Puedes Continuar!");
             jButton4.setText("Continuar");
-            jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/defuse.png")));
-            jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/defuse.png")));
-            jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/defuse.png")));
+            exit = 1;
+            switch (boton){
+                case 1:
+                    jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/defuse.png")));
+                    break;
+                case 2:
+                    jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/defuse.png")));
+                    break;
+                case 3:
+                    jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/defuse.png")));
+                    break; 
+            }
         }
         if (value == false) {
             jLabel1.setText("Haz Perdido!");
             exit = 1;
             archivo.deletePlayer(player);
-            jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/exp.png")));
-            jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/exp.png")));
-            jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/exp.png")));
+            switch (boton){
+                case 1:
+                    jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/exp.png")));
+                    break;
+                case 2:
+                    jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/exp.png")));
+                    break;
+                case 3:
+                    jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/exp.png")));
+                    break;
+            } 
         }
         lock = 1;
         }

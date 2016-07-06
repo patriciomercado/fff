@@ -1,9 +1,11 @@
 package GameSBOMB;
 
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class ventanaPrincipal extends javax.swing.JFrame {
     jugadores archivo = new jugadores();
+    preguntas mezcla = new preguntas ();
     public ventanaPrincipal() {
         initComponents();
     }
@@ -29,6 +31,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         jInternalFrame1.setVisible(true);
@@ -194,20 +197,28 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(290, 300, 200, 80);
 
-        jLabel1.setFont(new java.awt.Font("Trajan Pro", 3, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Trajan Pro", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("GameSBOMB");
         jLabel1.setAlignmentY(0.0F);
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel1.setOpaque(true);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(170, 50, 480, 120);
+        jLabel1.setBounds(200, 100, 360, 70);
 
         jLabel2.setFont(new java.awt.Font("Triforce", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setText("APLICACION ES ESTADO EXPERIMENTAL, SOLO PARA USO ACADEMICO               Dev:Javier vargas");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 490, 790, 60);
+        jLabel2.setBounds(20, 520, 790, 60);
+
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/11174672_977005655677138_7317003802323797518_o.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(-300, -40, 1520, 730);
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -215,7 +226,16 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String [] options = {"1","2","3","4"};
+        buton_Action();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        System.exit(0);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+  
+    public void buton_Action(){
+        String [] options = {"2","3","4"};
         int n = JOptionPane.showOptionDialog(null,
 		"Cuantos jugadores son?",
 		"Una Simple Pregunta",
@@ -223,21 +243,15 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 		JOptionPane.QUESTION_MESSAGE,
 		null,     //don't use a custom Icon
 		options,  //the titles of buttons
-		options[0]) + 1; //the title of the default button
-        
+		options[0]) + 2; //the title of the default button
         archivo.writePlayers(n);
-        juego jugar = new juego();
+        mezcla.writePreguntas();
+        juego jugar = new juego(-1,0);
         jugar.setJ(n-1);
         jugar.setVisible(true);
         dispose();
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        System.exit(0);
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -256,6 +270,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

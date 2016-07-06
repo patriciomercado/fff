@@ -16,18 +16,23 @@ import java.util.Scanner;
  */
 public class jugadores {
     
-    public String [] readPlayers(){
-        File fichero = new File("jugadores.txt");
+    public boolean [] readPlayers(){
+        File fichero = new File("players.txt");
 		Scanner s = null;
-                String [] jugadores = new String [4];
+                boolean [] jugadores = new boolean [4];
                 int cont = 0;
 
 		try {
 			s = new Scanner(fichero);
                         
 			while (s.hasNextLine()) {
-				String linea = s.nextLine(); 
-				jugadores[cont] = linea;
+				String linea = s.nextLine();
+                                if(linea.equals("true")){
+                                   jugadores[cont] = true; 
+                                } else {
+                                   jugadores[cont] = false;
+                                }
+				
                                 cont++;
 			}
 
@@ -46,11 +51,11 @@ public class jugadores {
     }
     
     public int cantPlayers(){
-        File fichero = new File("jugadores.txt");
+        File fichero = new File("players.txt");
         Collator comparador = Collator.getInstance();
         comparador.setStrength(Collator.PRIMARY);
 		Scanner s = null;
-                String [] jugadores = new String [4];
+                boolean [] jugadores = new boolean [4];
                 int cont = 0;
 
 		try {
@@ -58,7 +63,11 @@ public class jugadores {
                         
 			while (s.hasNextLine()) {
 				String linea = s.nextLine(); 
-				jugadores[cont] = linea;
+                                if(linea.equals("true")){
+                                   jugadores[cont] = true; 
+                                } else {
+                                   jugadores[cont] = false;
+                                }
                                 cont++;
 			}
 
@@ -75,79 +84,37 @@ public class jugadores {
 		}
                 cont = 0;
         for(int i = 0; i < 4; i++){
-            if( (jugadores[i]!=null) && (comparador.compare(jugadores[i], "0") != 0)){
+            if(jugadores[i]){
                 cont++;
             }
         }
         return cont;
     }
-    
-        public int cantPlayers2(){
-        File fichero = new File("jugadores.txt");
-        Collator comparador = Collator.getInstance();
-        comparador.setStrength(Collator.PRIMARY);
-		Scanner s = null;
-                String [] jugadores = new String [4];
-                int cont = 0;
-
-		try {
-			s = new Scanner(fichero);
-                        
-			while (s.hasNextLine()) {
-				String linea = s.nextLine(); 
-				jugadores[cont] = linea;
-                                cont++;
-			}
-
-		} catch (Exception ex) {
-			System.out.println("Mensaje: " + ex.getMessage());
-		} finally {
-			// Cerramos el fichero tanto si la lectura ha sido correcta o no
-			try {
-				if (s != null)
-					s.close();
-			} catch (Exception ex2) {
-				System.out.println("Mensaje 2: " + ex2.getMessage());
-			}
-		}
-                cont = -1;
-        for(int i = 0; i < 4; i++){
-            if(comparador.compare(jugadores[i], "0") == 0){
-                cont++;
-            }
-            if(comparador.compare(jugadores[i], "1") == 0){
-                cont++;
-            }
-            if(comparador.compare(jugadores[i], "2") == 0){
-                cont++;
-            }
-            if(comparador.compare(jugadores[i], "3") == 0){
-                cont++;
-            }
-            if(comparador.compare(jugadores[i], "4") == 0){
-                cont++;
-            }            
-        }
-        return cont;
-    }
-    
+      
     public void writePlayers(int players){
-        String [] cantPlayers = new String [4];
-        cantPlayers[0] = "1";
+        delete();
+        File archivo = new File ("players.txt");
+        FileWriter fichero = null;
+        
+        boolean [] cantPlayers = new boolean [4];
+        cantPlayers[0] = true;
         if(players == 2){
-            cantPlayers[1] = "2";
+            cantPlayers[1] = true;
+            cantPlayers[2] = false;
+            cantPlayers[3] = false;
         } else if(players == 3){
-            cantPlayers[1] = "2";
-            cantPlayers[2] = "3";
+            cantPlayers[1] = true;
+            cantPlayers[2] = true;
+            cantPlayers[3] = false;
         }else if(players == 4){
-            cantPlayers[1] = "2";
-            cantPlayers[2] = "3";
-            cantPlayers[3] = "4";
+            cantPlayers[1] = true;
+            cantPlayers[2] = true;
+            cantPlayers[3] = true;
         }
-        	FileWriter fichero = null;
+        	
 		try {
-			fichero = new FileWriter("jugadores.txt");
-			for (String linea : cantPlayers) {
+			fichero = new FileWriter(archivo,true);
+			for (boolean linea : cantPlayers) {
 				fichero.write(linea + "\n");
 			}
 			fichero.close();
@@ -157,17 +124,21 @@ public class jugadores {
     }
     
     public void deletePlayer(int player){
-        File fichero = new File("jugadores.txt");
+        File fichero = new File("players.txt");
 		Scanner s = null;
-                String [] jugadores = new String [4];
+                boolean [] jugadores = new boolean [4];
                 int cont = 0;
-
+                
 		try {
 			s = new Scanner(fichero);
                         
 			while (s.hasNextLine()) {
 				String linea = s.nextLine(); 
-				jugadores[cont] = linea;
+                                if(linea.equals("true")){
+                                   jugadores[cont] = true; 
+                                } else {
+                                   jugadores[cont] = false;
+                                }
                                 cont++;
 			}
 
@@ -183,27 +154,43 @@ public class jugadores {
 			}
 		}
                 
-                for(int j = 0; j < 4; j++){
-                    try{
-                        if(Integer.parseInt(jugadores[j]) == player){
-                            jugadores[j] = "0";
-                        }
-                    } catch (Exception ex){}
-
-                }
+                jugadores[player] = false;
         	FileWriter fichero2 = null;
+             
 		try {
-			fichero2 = new FileWriter("jugadores.txt");
-			for (String linea : jugadores) {
+			fichero2 = new FileWriter("players.txt");
+			for (boolean linea : jugadores) {
 				fichero2.write(linea + "\n");
 			}
 			fichero2.close();
 		} catch (Exception ex) {
 			System.out.println("Mensaje de la excepción: " + ex.getMessage());
-		}                
-                
-                
+		}                  
     }
     
+    public int winner(){
+        int cont = 0;
+        File fichero = new File("players.txt");
+        Scanner s = null;
+        
+        try {
+            s = new Scanner(fichero);          
+            while (s.hasNextLine()) {
+                String linea = s.nextLine(); 
+                if(linea.equals("true")){
+                    return (cont);        
+                }
+                cont++;
+            }
+        } catch (Exception ex) {
+            System.out.println("Mensaje de la excepción: " + ex.getMessage());
+        }
+        return (0);
+    }
+
+    private void delete() {
+        File fichero = new File("players.txt");
+        fichero.delete();
+    }
     
 }

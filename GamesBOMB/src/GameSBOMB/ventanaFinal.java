@@ -2,7 +2,9 @@ package GameSBOMB;
 
 public class ventanaFinal extends javax.swing.JFrame {
 
-    public ventanaFinal() {
+    private String player = "Player ";
+    public ventanaFinal(int winner) {
+        player = player + Integer.toString(winner);
         initComponents();
     }
     @SuppressWarnings("unchecked")
@@ -10,6 +12,8 @@ public class ventanaFinal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -23,7 +27,19 @@ public class ventanaFinal extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("GAME OVER!");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(80, 80, 610, 146);
+        jLabel1.setBounds(100, 10, 610, 146);
+
+        jLabel3.setFont(new java.awt.Font("Emulogic", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("El Ganador es:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(140, 180, 260, 50);
+
+        jLabel4.setFont(new java.awt.Font("Emulogic", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText(player);
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(410, 180, 270, 50);
 
         jButton1.setText("Jugar de Nuevo");
         jButton1.setPreferredSize(new java.awt.Dimension(81, 23));
@@ -44,10 +60,10 @@ public class ventanaFinal extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(270, 420, 260, 83);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/sky_lanterns_by_wlop-d7b5nfg.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 800, 600);
+        jLabel2.setBounds(-390, -60, 1320, 720);
 
         pack();
         setLocationRelativeTo(null);
@@ -63,11 +79,12 @@ public class ventanaFinal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
