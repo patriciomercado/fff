@@ -98,10 +98,11 @@ public class UsoString {
         String out = "";
         boolean charExist = false;
             try{
-                charExist = existeChar(str, JOptionPane.showInputDialog(null,"Ingrese"
+                charExist = existeChar(str, JOptionPane.showInputDialog(null,"Ingrese "
                                                 +"un caracter a buscar. \n solo se tomara "
                                                 +"encuenta el primer caracter ingresado"
-                                                + "\n si se deja en blanco, saldra del programa!").charAt(0));            
+                                                + "\n si se deja en blanco, saldra del programa!"
+                                                + "\n Cancele para salir").charAt(0));            
             } catch (Exception ex){
                 System.exit(0);
             }
@@ -135,14 +136,21 @@ public class UsoString {
 
     public static void imprimirResultados(String str) { // Permite ver por pantalla el resultado del uso de todos los métodos anteriores
         String aux = leerChar(str);
-        String aux2 = leerFrase(str);     
+        String aux2 = leerFrase(str);
+        String aux3 = "";
+        char [] letras = crearArrayChar(str);
+        for(int i = 0; i <letras.length; i++){
+            aux3 += "["+letras[i]+"]";
+        }
         
         JOptionPane.showMessageDialog(null,"El largo de la cadena es "+largoCadena(str)
                                            +"\nLa cantidad de vocales fue "+contarVocales(str)
                                            +"\nLa Cantidad de Consonantes fue de "+contarConsonantes(str)
                                            +"\nLa frase Invertida es "+invertirString(str)
                                            +"\nEl Caracter Ingresado "+aux
-                                           +"\nLa subFrase Ingresada "+aux2);
+                                           +"\nLa subFrase Ingresada "+aux2
+                                           +"\nLa Matriz de Char es "+aux3
+                                           );
     } 
      
 
