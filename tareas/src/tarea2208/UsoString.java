@@ -93,12 +93,10 @@ public class UsoString {
         }
         return letras.clone();
     }
-
-    public static void imprimirResultados(String str) { // Permite ver por pantalla el resultado del uso de todos los métodos anteriores
-        String aux;
-        String aux2;
+    
+    public static String leerChar(String str){
+        String out = "";
         boolean charExist = false;
-        boolean substring = false;
             try{
                 charExist = existeChar(str, JOptionPane.showInputDialog(null,"Ingrese"
                                                 +"un caracter a buscar. \n solo se tomara "
@@ -108,23 +106,36 @@ public class UsoString {
                 System.exit(0);
             }
         if(charExist == true){
-            aux = "existe";
+            out = "existe";
         }else{
-            aux = "no existe";
+            out = "no existe";
         }
+        return out;
+    }
+    
+    public static String leerFrase(String str){
+        String out = "";
+        boolean substring = false;
             try{
                 substring = existeSubString(str, JOptionPane.showInputDialog(null,"Ingrese"
-                                                +"un caracter a buscar. \n solo se tomara "
-                                                +"encuenta el primer caracter ingresado"
-                                                + "\n si se deja en blanco, saldra del programa!"));            
+                                                +"una frase a buscar. \n"
+                                                + "\n Presione cancelar para salir del programa!"));            
             } catch (Exception ex){
                 System.exit(0);
             }
         if(substring == true){
-            aux2 = "existe";
+            out = "existe";
         }else{
-            aux2 = "no existe";
+            out = "no existe";
         }        
+        
+        
+        return out;
+    }
+
+    public static void imprimirResultados(String str) { // Permite ver por pantalla el resultado del uso de todos los métodos anteriores
+        String aux = leerChar(str);
+        String aux2 = leerFrase(str);     
         
         JOptionPane.showMessageDialog(null,"El largo de la cadena es "+largoCadena(str)
                                            +"\nLa cantidad de vocales fue "+contarVocales(str)
@@ -133,24 +144,6 @@ public class UsoString {
                                            +"\nEl Caracter Ingresado "+aux
                                            +"\nLa subFrase Ingresada "+aux2);
     } 
-    
-    public static int leerInt(String aux) {
-        int num = 0;
-        boolean salir = false;
-        do {
-            try {
-                num = Integer.parseInt(JOptionPane.showInputDialog(null, aux));
-                salir = true;
-                if(num <=0 || num >= 5){
-                    JOptionPane.showMessageDialog(null, "Debe introducir solo uno de los numeros que se te indican. \n Intente nuevamente");
-                   salir = false; 
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Debe introducir solo numeros. \n Intente nuevamente");
-                salir = false;
-            }
-        } while (salir != true);
-        return num;
-    }   
+     
 
 }
