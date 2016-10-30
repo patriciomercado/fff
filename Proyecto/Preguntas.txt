@@ -1,0 +1,92 @@
+Todos toman: Beben 1 sorbo todos los jugadores. #Toma izquierda: El jugador que se encuentra a la izquiera del  jugador de este turno toma 1 sorbo. #Toma Derecha: El jugador que se encuentra al la derecha del jugador de este turno toma 1 sorbo. #Regala 3: El jugador debe repartir entre todos los jugadores un total de 3 sorbos. Pudiendo
+distribuirlos a elección (incluyéndose a sı́ mismo). #
+Regala 4 El jugador debe repartir entre todos los jugadores un total de 4 sorbos. Pudiendo
+distribuirlos a elección (incluyéndose a sı́ mismo). #
+Regala 5: El jugador debe repartir entre todos los jugadores un total de n sorbos. Pudiendo
+distribuirlos a elección (incluyéndose a sı́ mismo). #
+Toma 1: El jugador debe beber 1 sorbos de su vaso. #
+Toma 2 El jugador debe beber 2 sorbos de su vaso. #
+Toma 3: El jugador debe beber 3 sorbos de su vaso. #
+Nunca Nunca: El jugador debe nombrar un hecho mediante la frase ”Yo nunca nunca he...”(nombrando
+ahı́ la vivencia). Las personas quienes hayan hecho lo nombrado deben beber un sorbo. #
+Tapita Puritana: El jugador debe beber una tapa llena de alcohol puro de alto octanaje (llámese ron,
+pisco, tequila, vodka, etc). #
+Cascada: Si el jugador actual  toma, el siguiente igual debe tomar, el siguiente del siguiente y el siguiente del siguiente.... hasta completar todos los jugadores. Si el jugador actual para de beber el jugador que lo sigue puede  parar o  seguir tomando asi obligando a tomar al jugador que lo sigue y este al que lo sigue. #
+Cultura Chupı́stica: El jugador debe escoger un conjunto (por ejemplo, equipos de fútbol chilenos) y
+nombrar un elemento de dicho conjunto (en el caso del ejemplo, un equipo). En sentido antihorario, los
+jugadores deben ir nombrando elementos de dicho conjunto sin repetir y no demorar más de un tiempo
+determinado vı́a consenso. El jugador que pierda debe tomar 1 sorbo. #
+Regla:  El jugador puede agregar una regla al juego, la cual debe ser acatada sin
+excepción por todos los jugadores (a menos que establezca explı́citamente lo contrario). Si vuelve a salir Regla esta debe reemplazar a su anterior.#
+Minas toman: Deben beber 1 sorbo todos los jugadores de género femenino.#
+Hombres toman: Deben beber 1 sorbo todos los jugadores de género masculino.#
+Toma tu dado: El jugador debe lanzar el dado y tomar la cantidad de sorbos que indica éste.#
+Dedo: El jugador tiene la facultad de poner en el borde de la mesa de juego, o en alguna superficie(visible) su dedo pulgar derecho. Una vez hecho esto, los demás jugadores deben hacer lo mismo con sus respectivos dedos pulgares, el último en hacerlo debe tomar 1 sorbo.#
+Historia: Los jugadores deben construir en conjunto una linda historia. Para ello, el jugador quien cae
+en el casillero parte diciendo una palabra, el jugador de la derecha debe repetir lo dicho por el primer
+jugador y agregar una nueva palabra, y ası́ sucesivamente. Pierde quien se equivoca en repetir todo lo
+dicho anteriormente y debe tomar 1 sorbo.#
+Toman tienen hermana: Deben beber 1 sorbo todos los jugadores quienes posean una o mas herman(s).#
+Africano: El jugador debe poner sus labios en todo el borde superior del vaso en el cual está bebiendo
+y tomarse todo el contenido de este sin parar (i.e., ”al seco”). Sugerencia: Se recomienda utilizar utilizar
+ambas manos y exhalar para cubrir todo el borde.#
+Chancho inflado: El jugador tiene la facultad de inflar las mejillas. Una vez hecho esto, los demás jugadores deben hacer lo mismo con sus respectivos dedos pulgares, El último en
+hacerlo debe tomar 1 sorbo.#
+Sin ir al baño: El jugador que caiga en esta casilla no puede ir al baño, a menos que pague tomando 6
+sorbos (en caso de emergencia, pueden ser tomados a la vuelta del baño).#
+Abdominales + Toma 2: El jugador debe realizar 10 abdominales y tomar 2 sorbos.#
+Karaoke: El jugador debe elegir una canción, la cual debe ser cantada por todos los jugadores al unı́sono.
+Los jugadores que no se sepan la letra o se equivoquen deben tomar 1 sorbo.#
+Preguntas: Partiendo por el jugador que cayó en el casillero, los jugadores deben realizar una pregunta
+weona a cualquier otro jugador (no se admiten preguntas no-weonas como Hola, ¿cómo estás?, por ejemplo). Cada jugador sólo debe preguntar, nunca responder o reı́rse. Pierde quien haga esto último o que haga una pregunta no-weona y debe tomar 1 sorbo.#
+Chiste: El jugador debe contar un chiste a los demás jugadores. Los jugadores que se rı́an del chiste
+contado (sin contar a la persona que lo contó) deben tomar 1 sorbo. En caso que ningún jugador diferente a la persona que contó el chiste se rı́a, éste debe tomar 1 sorbo.#
+Siete: Partiendo por el jugador del turno actual (y continuando en sentido antihorario), se deben
+enumerar todos los números naturales de forma creciente, excluyendo todos los múltiplos de 7 y los
+números que tengan un dı́gito 7 en su escritura decimal. El jugador que no cumpla dichas condiciones
+debe tomar 1 sorbo.#
+Trabalenguas: El jugador debe recitar un trabalenguas a elección. En caso de equivocarse debe tomar 1
+sorbo.#
+Jack Sparrow: Al puro estilo del famoso pirata protagonista de la saga Piratas del Caribe, el jugador
+debe tomar un sorbo de ron puro desde la botella.#
+Al seco: El jugador debe tomarse todo el contenido de su vaso de forma continua y sin detenerse.#
+Toma pelo más corto: Toma el jugador con pelo más corto (de la cabeza, y sin contar barbas). En caso
+de no poder determinarse fácilmente, los jugadores en cuestión deben arrancarse a ellos mismos un pelo
+de su cabeza al azar, los cuales serán comparados para determinar quien tiene el pelo más corto. Dicho
+jugador debe tomar 1 sorbo.#
+Toma más flaco: Toma el jugador más delgado participando. En caso de que no sea fácil de determinar,
+se utilizará una cinta de medir (u algún objeto de medición improvisado) para medir la cintura (pasando
+por el ombligo) y determinar quien es más flaco/a. Dicho jugador debe tomar 1 sorbo.#
+Flexiones + Toma 2: El jugador debe realizar 5 flexiones y tomar 2 sorbos.#
+Toma pelo más largo:  Toma el jugador con pelo más largo (de la cabeza, y sin contar barbas). En caso
+de no poder determinarse fácilmente, los jugadores en cuestión deben arrancarse a ellos mismos un pelo
+de su cabeza al azar, los cuales serán comparados para determinar quien tiene el pelo más corto. Dicho jugador debe tomar 1 sorbo.#
+Todos toman menos tú: Salvo el jugador que cayó en este casillero, todos los jugadores deben tomar 1
+sorbo.#
+Toma más alto: El o los jugadores de mayor estatura deben beber 1 sorbo.#
+Chela al seco: El jugador debe beber un vaso de cerveza ”al seco”.#
+Ninguna gota: El jugador debe beber todo el contenido de su vaso ”al seco”. Luego de esto, se da vuelta
+el vaso en el aire y no debe caer ninguna gota de lı́quido. En caso contrario, el jugador debe repetir la
+penitencia.#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
