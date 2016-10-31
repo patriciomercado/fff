@@ -180,7 +180,7 @@ public class Game extends javax.swing.JFrame {
     public void setPlayers(int p){
         this.players = p;
     }
-    public void setWindowsReady(String [] playName){
+    public void setWindowsReady(String [] playName){ //Prepara la ventana con la cantidad de jugadores establecida en la anterior clase
         switch(this.players){
             case 2:
                 J1.setText(playName[0]);
@@ -218,7 +218,7 @@ public class Game extends javax.swing.JFrame {
         Question.setText("Recuerden tener el Stock \nsuficiente para jugar");
     }
     
-        public void fillPlayersCollection(String [] playName){
+        public void fillPlayersCollection(String [] playName){ //Agrega los Players a la ArrayList
             Player j1 = new Player(playName[0]);
             Player j2 = new Player(playName[1]);
             Player j3 = new Player(playName[2]);
@@ -251,7 +251,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    private void dado_number() {
+    private void dado_number() { //Simula el lanzamiento del dado, y muestra la accion en la ventana (ademas del numero del dado)
         if(dado_lock == false){
             int cara = (int)Math.floor(Math.random()*(1-6)+6);
             Dado.setText(Integer.toString(cara));
@@ -264,7 +264,7 @@ public class Game extends javax.swing.JFrame {
         }
     }
 
-    private void next_turn() {
+    private void next_turn() { //Avanza al siguiente turno, Resalta en rojo el nombre jugador del turno actual
         turn++;
         if(turn==players) turn = 0;
         System.out.println(turn +" "+players);
@@ -291,7 +291,7 @@ public class Game extends javax.swing.JFrame {
         
     }
 
-    private void score_update() {
+    private void score_update() { //Actualiza el Score del jugador actual.
     if (turn != -1){
         Players.get(turn).addScore(Integer.parseInt(Dado.getText()));
         switch(turn){
@@ -307,7 +307,7 @@ public class Game extends javax.swing.JFrame {
         }
     }
     
-    public void ScoreCheck(){
+    public void ScoreCheck(){ //Checkea
         if(turn != -1){
         if((Players.get(turn).getScore()) > 10 ){
             endFrame.setWiner(Players.get(turn).getPlayerName());

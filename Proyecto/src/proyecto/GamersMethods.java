@@ -12,17 +12,17 @@ package proyecto;
 public class GamersMethods {
     private final Game game = new Game();
     
-    public void setPlayersGame(int p){
+    public void setPlayersGame(int p){ //Setea la cantidad de jugadores
         game.setPlayers(p);
     }
     
-    public void setGamersName(String G1, String G2, String G3, String G4) {
+    public void setGamersName(String G1, String G2, String G3, String G4) { //Recibe los nombres de los jugadores, para cambiarlos en la siguiente ventana.
         String [] Gamers = {G1, G2, G3, G4};
         game.setWindowsReady(Gamers);
         game.fillPlayersCollection(Gamers);
      }
     
-    public void setVisibleGame(){
+    public void setVisibleGame(){ //Muestra la pantalla de juego
         game.setVisible(true);
     }
 }

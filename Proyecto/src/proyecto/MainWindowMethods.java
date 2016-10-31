@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class MainWindowMethods {
     
     
-    public int buton_Action(){
+    public int buton_Action(){ //Cuando se Presiona Comenzar, este metodo indica con cuantos jugadores se iniciara la partida
         String [] options = {"2","3","4"};
         int n = JOptionPane.showOptionDialog(null,
 		"Cuantos jugadores son?",
@@ -27,28 +27,16 @@ public class MainWindowMethods {
         return (n);
     } 
     
-    public void rules(){
+    public void rules(){ //Al presionar el boton Reglas, Aparecera un mensaje con lo aqui escrito
         JOptionPane.showMessageDialog(null, "Reglas: \n");
     }
     
-    public void WinSwitch(int g){
+    public void WinSwitch(int g){ //Indica a la siguiente ventana Cuantos jugadores son, y Escuende las labelsque no se ocuparan
         Gamers game = new Gamers();
-        switch(g){
-                case 2:
-                    game.setPlayers(g);
-                    game.LabelsCorrection();
-                    game.setVisible(true);
-                    break;
-                case 3:
-                    game.setPlayers(g);
-                    game.LabelsCorrection();
-                    game.setVisible(true);
-                    break;
-                case 4:
-                    game.setPlayers(g);
-                    game.setVisible(true);
-                    break;
-        }
+        game.setPlayers(g);
+        game.LabelsCorrection();
+        game.setVisible(true);
+        
     }
     
     
