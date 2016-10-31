@@ -1,10 +1,10 @@
 package proyecto;
 
-public class ventanaFinal extends javax.swing.JFrame {
+public class LastWindow extends javax.swing.JFrame {
 
     private String player = "Player ";
 
-    public ventanaFinal(int winner) {
+    public LastWindow(int winner) {
         if(winner == 0){
             
         }
@@ -85,7 +85,7 @@ public class ventanaFinal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ventanaPrincipal obj = new ventanaPrincipal();
+        MainWindow obj = new MainWindow();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

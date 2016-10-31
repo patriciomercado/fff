@@ -15,7 +15,7 @@ public class Run {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ventanaPrincipal main = new ventanaPrincipal();
+        MainWindow main = new MainWindow();
         main.setVisible(true);
     }
     
