@@ -1,21 +1,13 @@
+package proyecto;
+
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
-public class GestorDeDatos {
-	
-	//lee los archivos de los jugadores y las preguntas
-	
-	ArrayList<String> preguntas= new ArrayList<String>();
-	ArrayList<String> ranking = new ArrayList<String>();
 
+public class DataManager {
 	
-	public GestorDeDatos(){
-		listaPreguntas("Preguntas.txt");
-	}
-	
+	//lee los archivos de los jugadores y las preguntas	
 	
 	 public void crear(String nombre, String texto){
 	        
@@ -47,19 +39,19 @@ public class GestorDeDatos {
 	}
 	
 	
-	public void listaPreguntas(String listaPreguntas){
+	public ArrayList<String> listaPreguntas(String listaPreguntas){
 		//Las preguntas estan separadas por "#" aqui se separa la cadena completa en un ArrayList
 		
 	     String ficheroPreguntas = leerFichero(listaPreguntas);
-	        String[] arrayFichero = ficheroPreguntas.split("#");
-	        ArrayList<String> pregunta = new ArrayList<String>();
+	        String [] arrayFichero = ficheroPreguntas.split("#");
+	        ArrayList<String> preguntas = new ArrayList<String>();
 	       
 	        for (int i = 0; i < arrayFichero.length; i++) {
-				pregunta.add(arrayFichero[i]);
+				preguntas.add(arrayFichero[i]);
 			}
 	       
 	       
-	        this.preguntas = pregunta;
+	        return (preguntas);
 	}
 	
 	

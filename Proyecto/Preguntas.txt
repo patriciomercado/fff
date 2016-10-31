@@ -1,15 +1,15 @@
-Todos toman: Beben 1 sorbo todos los jugadores. #Toma izquierda: El jugador que se encuentra a la izquiera del  jugador de este turno toma 1 sorbo. #Toma Derecha: El jugador que se encuentra al la derecha del jugador de este turno toma 1 sorbo. #Regala 3: El jugador debe repartir entre todos los jugadores un total de 3 sorbos. Pudiendo
-distribuirlos a elección (incluyéndose a sı́ mismo). #
-Regala 4 El jugador debe repartir entre todos los jugadores un total de 4 sorbos. Pudiendo
-distribuirlos a elección (incluyéndose a sı́ mismo). #
-Regala 5: El jugador debe repartir entre todos los jugadores un total de n sorbos. Pudiendo
+Todos toman: Beben 1 sorbo todos los jugadores. 
+#Toma izquierda: El jugador que se encuentra a la izquiera del  jugador de este turno toma 1 sorbo. 
+#Toma Derecha: El jugador que se encuentra al la derecha del jugador de este turno toma 1 sorbo. 
+#Regala 3: El jugador debe repartir entre todos los jugadores un total de 3 sorbos. Pudiendodistribuirlos a elección (incluyéndose a sı́ mismo). 
+#Regala 4 El jugador debe repartir entre todos los jugadores un total de 4 sorbos. Pudiendo distribuirlos a elección (incluyéndose a sı́ mismo). 
+#Regala 5: El jugador debe repartir entre todos los jugadores un total de n sorbos. Pudiendo
 distribuirlos a elección (incluyéndose a sı́ mismo). #
 Toma 1: El jugador debe beber 1 sorbos de su vaso. #
 Toma 2 El jugador debe beber 2 sorbos de su vaso. #
 Toma 3: El jugador debe beber 3 sorbos de su vaso. #
-Nunca Nunca: El jugador debe nombrar un hecho mediante la frase ”Yo nunca nunca he...”(nombrando
-ahı́ la vivencia). Las personas quienes hayan hecho lo nombrado deben beber un sorbo. #
-Tapita Puritana: El jugador debe beber una tapa llena de alcohol puro de alto octanaje (llámese ron,
+Nunca Nunca: El jugador debe nombrar un hecho mediante la frase ”Yo nunca nunca he...”(nombrando ahı́ la vivencia). Las personas quienes hayan hecho lo nombrado deben beber un sorbo. 
+#Tapita Puritana: El jugador debe beber una tapa llena de alcohol puro de alto octanaje (llámese ron,
 pisco, tequila, vodka, etc). #
 Cascada: Si el jugador actual  toma, el siguiente igual debe tomar, el siguiente del siguiente y el siguiente del siguiente.... hasta completar todos los jugadores. Si el jugador actual para de beber el jugador que lo sigue puede  parar o  seguir tomando asi obligando a tomar al jugador que lo sigue y este al que lo sigue. #
 Cultura Chupı́stica: El jugador debe escoger un conjunto (por ejemplo, equipos de fútbol chilenos) y

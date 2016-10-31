@@ -1,17 +1,22 @@
 package proyecto;
 
-public class GameMethods {
+import java.util.ArrayList;
 
-	private int numJugadores;
+public class GameMethods {        
+ 
+        ArrayList<String> preguntas = new ArrayList<String>();
+	ArrayList<String> ranking = new ArrayList<String>();
         
-        
+        DataManager file = new DataManager();
+
 	public void preguntaAzar() {
-		int azar=(int) (Math.random()*39+0);
+		int azar =(int)(Math.random()*39+0);
 
 	}
-	public GameMethods(){
-		
-	}
+        
+        public void armarPreguntas(){
+            preguntas = file.listaPreguntas("Preguntas.txt");
+        }
         
 	
 
