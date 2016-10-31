@@ -14,7 +14,7 @@ public class GameMethods {
 
 	}
         
-        public void armarPreguntas(){
+        public void armarPreguntas(){ //Crea la lista de preguntas y las agrega al arraylist
             preguntas = file.listaPreguntas("Preguntas.txt");
         }
         

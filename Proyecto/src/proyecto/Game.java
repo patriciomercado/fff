@@ -307,7 +307,7 @@ public class Game extends javax.swing.JFrame {
         }
     }
     
-    public void ScoreCheck(){ //Checkea
+    public void ScoreCheck(){ //Checkea el Score del Jugador actual, si supera el limite establecido, muestra la pantalla final.
         if(turn != -1){
         if((Players.get(turn).getScore()) > 10 ){
             endFrame.setWiner(Players.get(turn).getPlayerName());
@@ -317,7 +317,7 @@ public class Game extends javax.swing.JFrame {
         }
     }
 
-    private void checkStateAndGoNext() {
+    private void checkStateAndGoNext() { //Checkea es estado de la partida, si el dado no fue lanzado no avanzara.
     if(dado_lock == false){
         JOptionPane.showMessageDialog(null,"Lanza el dado Primero!!!");
     } else{
