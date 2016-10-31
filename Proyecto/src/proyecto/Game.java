@@ -309,7 +309,7 @@ public class Game extends javax.swing.JFrame {
     
     public void ScoreCheck(){ //Checkea el Score del Jugador actual, si supera el limite establecido, muestra la pantalla final.
         if(turn != -1){
-        if((Players.get(turn).getScore()) > 10 ){
+        if((Players.get(turn).getScore()) > 50 ){
             endFrame.setWiner(Players.get(turn).getPlayerName());
             endFrame.setVisible(true);
             dispose();
