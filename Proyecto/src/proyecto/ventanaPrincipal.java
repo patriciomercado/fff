@@ -1,11 +1,8 @@
 package proyecto;
 
-import java.util.Random;
-import javax.swing.JOptionPane;
-
 public class ventanaPrincipal extends javax.swing.JFrame {
     int [] inicio = {0,0,0,0};
-    private MainWindow meths = new MainWindow();
+    private final MainWindow meths = new MainWindow();
     
     public ventanaPrincipal() {
         initComponents();

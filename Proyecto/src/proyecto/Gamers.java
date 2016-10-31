@@ -15,7 +15,7 @@ public class Gamers extends javax.swing.JFrame {
      * Creates new form gamers
      */
     
-    private GamersMethods Mets = new GamersMethods();
+    private final GamersMethods Mets = new GamersMethods();
     private int players = 0;
     public Gamers() {
         initComponents();
@@ -102,15 +102,18 @@ public class Gamers extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
-        G1.setVisible(false);
+        Mets.setPlayersGame(this.players);
         Mets.setGamersName(G1.getText(),G2.getText(),G3.getText(),G4.getText());
+        Mets.setVisibleGame();
+        dispose();
+        
     }//GEN-LAST:event_NextActionPerformed
 
-    public void setPlayers(int p){
+    public void setPlayers(int p){ //se Recibe el numero de jugadores para corregir las JLabels
         this.players = p;
     }
     
-    public void LabelsCorrection(){
+    public void LabelsCorrection(){ //Corrige las JLabels segun el numero de jugadores
         switch (this.players){
             case 2:
                 G3.setVisible(false);
