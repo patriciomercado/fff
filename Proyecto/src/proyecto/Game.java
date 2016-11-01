@@ -19,7 +19,7 @@ public class Game extends javax.swing.JFrame {
      */
     private int players = 0;
     private final GameMethods Mech = new GameMethods();
-    private LastWindow endFrame = new LastWindow();
+    private final LastWindow endFrame = new LastWindow();
     private final ArrayList <Player> Players = new ArrayList<>();
     
     private boolean dado_lock = true;
@@ -267,7 +267,6 @@ public class Game extends javax.swing.JFrame {
     private void next_turn() { //Avanza al siguiente turno, Resalta en rojo el nombre jugador del turno actual
         turn++;
         if(turn==players) turn = 0;
-        System.out.println(turn +" "+players);
         
         Question.setText("");
         Dado.setVisible(true);
@@ -309,7 +308,7 @@ public class Game extends javax.swing.JFrame {
     
     public void ScoreCheck(){ //Checkea el Score del Jugador actual, si supera el limite establecido, muestra la pantalla final.
         if(turn != -1){
-        if((Players.get(turn).getScore()) > 50 ){
+        if((Players.get(turn).getScore()) > 5 ){
             endFrame.setWiner(Players.get(turn).getPlayerName());
             endFrame.setVisible(true);
             dispose();
@@ -322,6 +321,7 @@ public class Game extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"Lanza el dado Primero!!!");
     } else{
         score_update();
+        Dado.setText("");
         ScoreCheck();
         next_turn();
     }

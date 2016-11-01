@@ -28,7 +28,7 @@ public class DataManager {
 	 public void agregar(String archivo, String texto){
 		    
 		    String aux =leerFichero(archivo);
-		    String cadenaIntroduciada = aux +"#\n"+texto;
+		    String cadenaIntroduciada = aux +"\n#"+texto;
 		    crear(archivo, cadenaIntroduciada);
 		}
 	 
@@ -44,7 +44,7 @@ public class DataManager {
 		
 	     String ficheroPreguntas = leerFichero(listaPreguntas);
 	        String [] arrayFichero = ficheroPreguntas.split("#");
-	        ArrayList<String> preguntas = new ArrayList<String>();
+	        ArrayList<String> preguntas = new ArrayList<>();
 	       
 	        for (int i = 0; i < arrayFichero.length; i++) {
 				preguntas.add(arrayFichero[i]);
@@ -64,12 +64,12 @@ public class DataManager {
 		    f = new File(nombre);
 		    lectorArchivo = new FileReader(f);
 		    BufferedReader br = new BufferedReader(lectorArchivo);
-		    String l="";
-		    String aux="";
+		    String l = "";
+		    String aux = "";
 		    while(true){
-		        aux=br.readLine();
-		        if(aux!=null)
-		            l=l+aux;
+		        aux = br.readLine();
+		        if(aux != null)
+		            l += "\n" + aux;
 		        else
 		            break;
 		    }
@@ -78,7 +78,7 @@ public class DataManager {
 		   
 		    return l;
 		}catch(IOException e){
-		System.out.println("Error:"+e.getMessage());
+		System.out.println("Error:" + e.getMessage());
 		}
 		return null;
 		}

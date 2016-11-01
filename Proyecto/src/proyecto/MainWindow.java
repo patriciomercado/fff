@@ -92,7 +92,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_STARTActionPerformed
 
     private void RANKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RANKActionPerformed
-        
+        meths.rankDrunks();
     }//GEN-LAST:event_RANKActionPerformed
   
 

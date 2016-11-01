@@ -3,6 +3,7 @@ package proyecto;
 public class LastWindow extends javax.swing.JFrame {
 
     private String player = "Player ";
+    private final DataManager data = new DataManager();
 
     public LastWindow() {
         initComponents();
@@ -56,6 +57,7 @@ public class LastWindow extends javax.swing.JFrame {
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         MainWindow obj = new MainWindow();
         obj.setVisible(true);
+        addDrunkToRank();
         dispose();
     }//GEN-LAST:event_ExitActionPerformed
 
@@ -66,6 +68,9 @@ public class LastWindow extends javax.swing.JFrame {
     private javax.swing.JLabel uWin;
     // End of variables declaration//GEN-END:variables
 
+    private void addDrunkToRank(){
+        data.agregar("Ranking.txt", Winner.getText());
+    }
     
     public void setWiner(String w){
         Winner.setText(w);

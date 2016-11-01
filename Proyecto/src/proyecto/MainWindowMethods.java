@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class MainWindowMethods {
     
+    private final DataManager data = new DataManager();
     
     public int buton_Action(){ //Cuando se Presiona Comenzar, este metodo indica con cuantos jugadores se iniciara la partida
         String [] options = {"2","3","4"};
@@ -37,6 +38,12 @@ public class MainWindowMethods {
         game.LabelsCorrection();
         game.setVisible(true);
         
+    }
+    
+    public void rankDrunks(){
+        String drunks = "";
+        drunks = data.leerFichero("Ranking.txt");
+        JOptionPane.showMessageDialog(null, "Los Mejores Borrachos hasta elmomento: \n" +drunks);
     }
     
     
