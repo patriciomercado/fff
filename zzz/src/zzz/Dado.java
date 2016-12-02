@@ -9,15 +9,13 @@ package zzz;
  *
  * @author patricio mercado
  */
-public class Zzz {
+public class Dado {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-       FramPrincipal f =new FramPrincipal();
-       f.setVisible(true);
+    public Dado() {
     }
-    
+   
+    public int lanzarDado(){
+        int cara = (int) (Math.random()*6+1);
+        return cara;
+    }
 }

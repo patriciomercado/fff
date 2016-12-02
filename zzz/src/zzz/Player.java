@@ -3,7 +3,7 @@ package zzz;
 public class Player {
 
 	private String nombre;
-	private int puntaje;
+	private int puntaje = 0;
 
         public Player(String name){
             this.nombre = name;

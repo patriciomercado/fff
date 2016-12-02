@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class Game {        
  
-        private ArrayList<String> preguntas = new ArrayList<>();
+       
 	private ArrayList<String> ranking = new ArrayList<>();
         private ArrayList <Player> Players = new ArrayList<>();
         private final DataManager file = new DataManager();
@@ -33,15 +33,14 @@ public class Game {
         
     protected void dado_number(JButton Dado, JTextArea Question) { //Simula el lanzamiento del dado, y muestra la accion en la ventana (ademas del numero del dado)
         if(dado_lock == false){
-            int cara = (int) (Math.random()*6+1);
-            Dado.setText(Integer.toString(cara));
-            Dado.setIcon(null);
+
             dado_lock = true;
+            
             int pregunta = Players.get(turn).getScore() + cara;
             if(pregunta >= preguntas.size()){
                 Question.setText("Usted Es un Gran DRUNK!");
             } else{
-                Question.setText(azarPregunta(preguntas));
+                Question.setText(azarPregunta());
             }
         } else{
             JOptionPane.showMessageDialog(null, "ya lanzaste el dado!!!");

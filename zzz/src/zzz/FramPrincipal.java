@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author patricio mercado
  */
-public class Fram1 extends javax.swing.JFrame {
+public class FramPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form Fram1
      */
-    public Fram1() {
+    public FramPrincipal() {
         initComponents();
     }
 
@@ -51,6 +51,11 @@ public class Fram1 extends javax.swing.JFrame {
         });
 
         ranking.setText("Ranking");
+        ranking.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rankingActionPerformed(evt);
+            }
+        });
 
         salir.setText("Salir");
 
@@ -87,8 +92,6 @@ public class Fram1 extends javax.swing.JFrame {
     private void jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarActionPerformed
         // TODO add your handling code here:
         FramIngr fi = new FramIngr();
-        Gam g =new Gam();
-        g.numJugadores();
          setVisible(false);
         fi.setVisible(true);
     }//GEN-LAST:event_jugarActionPerformed
@@ -101,40 +104,12 @@ public class Fram1 extends javax.swing.JFrame {
        
     }//GEN-LAST:event_reglasActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Fram1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Fram1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Fram1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Fram1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void rankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rankingActionPerformed
+        DataManager dm = new DataManager();
+        JOptionPane.showMessageDialog(rootPane, dm.ranking());
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rankingActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Fram1().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jugar;

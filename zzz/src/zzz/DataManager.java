@@ -2,6 +2,7 @@ package zzz;
 
 import java.io.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 
@@ -10,7 +11,7 @@ public class DataManager {
 	//lee los archivos de los jugadores y las preguntas	
 	
 	 public void crear(String nombre, String texto){
-	        
+	        //parametros nombre del archivo y texto a introducir
 	        File f = new File(nombre);
 	        try{
 	        FileWriter w = new FileWriter(f);
@@ -24,12 +25,7 @@ public class DataManager {
 	        }catch(IOException e){};
 	        
 	 }
-	 
-         public String azarPregunta(){ 
-             ArrayList<String> preguntas = listaPreguntas();
-            int azar=(int) (Math.random()*preguntas.size()+0); 
-            return preguntas.get(azar); 
-        }
+
          
          
 	 public void agregar(String archivo, String texto){
@@ -56,8 +52,24 @@ public class DataManager {
 	       
 	        return (preguntas);
 	}
+        
+        public String azarPregunta(){ 
+            ArrayList<String> preguntas = listaPreguntas();
+            int azar=(int) (Math.random()*preguntas.size()+0); 
+            return preguntas.get(azar); 
+        }
 	
-	
+	public String ranking(){
+            try {
+                 String ranking = leerFichero(leerFichero("Ranking.txt"));
+                 return ranking;
+            } catch (Exception e) {
+                crear("Ranking.txt", "");
+                JOptionPane.showMessageDialog(null, "No se encontro \n"
+                        + "ranking de borrachos");
+            }
+             return null;
+        }
 	public String leerFichero(String nombre){
 		// lee un archivo y devuelve la cadena completa
 		
