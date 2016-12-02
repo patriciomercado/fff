@@ -57,6 +57,7 @@ public class FramGame extends javax.swing.JFrame {
         botonDado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jug1.setText("jLabel1");
 
@@ -120,7 +121,7 @@ public class FramGame extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(38, 38, 38)
                             .addComponent(jScrollPane1)
-                            .addGap(18, 18, 18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(botonDado, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(39, 39, 39)
@@ -184,8 +185,8 @@ public class FramGame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(botonDado)))
+                        .addGap(64, 64, 64)
+                        .addComponent(botonDado, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(siguiente)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -195,16 +196,16 @@ public class FramGame extends javax.swing.JFrame {
         botonDado.getAccessibleContext().setAccessibleDescription("111");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
-        partida.chequear(Integer.parseInt(botonDado.getText()));
+        partida.chequear(botonDado);
+        partida.actualizarLabels(score1,score2,score3,score4,score5,score6,score7);
     }//GEN-LAST:event_siguienteActionPerformed
 
     private void botonDadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDadoActionPerformed
-        Dado d = new Dado();
-        botonDado.setIcon(null);
-        botonDado.setText(""+d.lanzarDado());
+        partida.lanzarDado(botonDado);
         
     }//GEN-LAST:event_botonDadoActionPerformed
 

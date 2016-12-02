@@ -6,6 +6,8 @@
 package zzz;
 
 import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,19 +28,25 @@ public class Juego {
     public void turnos(int dado){
         
             p.get(turnoJug).addScore(puntuacion(dado));
-            
+            lanzamiento = false;
             turnoJug++;
             if (turnoJug >= p.size()) {
                 turnoJug = 0;
             }
-        
     }
     
-    public void chequear(int puntos){
+    public void lanzamientoSet(){
+        lanzamiento = true;
+        siguiente = true;
+    }
+    
+    public void chequear(JButton boton){
         if(lanzamiento == false){
             JOptionPane.showMessageDialog(null, "Lanza el Dado Primero");
         }else{
-            turnos(puntos);
+            turnos(Integer.parseInt(boton.getText()));
+            boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zzz/dados-04.gif")));
+            siguiente = false;
         }
     }
     
@@ -54,5 +62,35 @@ public class Juego {
                 puntos += caraDado;
         }
         return puntos;
+    }
+    
+    public void lanzarDado(JButton boton){
+        if(siguiente == true){
+            JOptionPane.showMessageDialog(null, "Ya lanzaste el dado");
+        }else{
+            boton.setIcon(null);
+            boton.setText(Integer.toString(d.lanzarDado()));
+            lanzamientoSet();
+        }
+    }
+    
+    public void actualizarLabels(JLabel score1, JLabel score2, JLabel score3, JLabel score4, JLabel score5, JLabel score6, JLabel score7) {
+        switch(turnoJug){
+            case 0:
+                
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+        }
     }
 }

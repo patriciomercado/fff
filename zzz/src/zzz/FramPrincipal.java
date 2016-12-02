@@ -35,6 +35,7 @@ public class FramPrincipal extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jugar.setText("Jugar");
         jugar.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +88,7 @@ public class FramPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarActionPerformed
