@@ -7,13 +7,19 @@ package zzz;
 
 /**
  *
- * @author patricio mercado
+ * @author patricio mercado y Javier Vargas
  */
 public class Dado {
-
+    /**
+     * Constructor sin parametros
+     */
     public Dado() {
     }
    
+    /**
+     * Metodo de la clase que genera un Numero Random
+     * @return Un entero positivo entre 1 y 6
+     */
     public int lanzarDado(){
         int cara = (int) (Math.random()*6+1);
         return cara;

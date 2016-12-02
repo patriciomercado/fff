@@ -9,25 +9,54 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 /**
  *
- * @author patricio mercado
+ * @author patricio mercado y Javier Vargas
+ * 
+ * Clase que maneja los metodos de la ventana principal del juego
  */
 public class Juego {
     private int turnoJug = 0;
     private boolean lanzamiento = false;
     private boolean siguiente = false;
-    private ArrayList<Player> p = new ArrayList<Player>();
-    Dado d =new Dado();
-
+    private DataManager file = new DataManager();
+    private ArrayList<Player> p = new ArrayList<>();
+    Dado d = new Dado();
+    String ganador = "";
+    
+    /**
+     * constructor del juego con el cual recibe el arraylist de jugadores
+     * @param p 
+     */
     public Juego(ArrayList<Player> p) {
         this.p = p;
+        
+    }
+    /**
+     * devuelve el ArrayList de Players
+     * @return 
+     */
+    public ArrayList<Player> getarrayListPlayer(){
+        return p;
+    }
+    /**
+     * devuelve la cantidad de jugadores actuales
+     * @return 
+     */
+    public int getTurnoJug() {
+        return turnoJug;
     }
     
+    /**
+     * Este metodo simula el cambio de turno, añadiendo el puntaje al jugador actual y 
+     * avanzando al siguiente jugador
+     * @param dado ingresa el valor del dado para ser añadido al score del jugador
+     */
     public void turnos(int dado){
         
-            p.get(turnoJug).addScore(puntuacion(dado));
+            p.get(turnoJug).addScore(dado);
             lanzamiento = false;
             turnoJug++;
             if (turnoJug >= p.size()) {
@@ -35,62 +64,120 @@ public class Juego {
             }
     }
     
+    /**
+     * verifica si el jugador actual es o no ganador del juego, checkeando si su puntaje
+     * sobrepasa el limite establecido
+     * @return false si gana, true si continua jugando
+     */
+    public boolean winer(){
+        if (p.get(turnoJug).getScore() >= 50) {
+            this.ganador = p.get(turnoJug).getPlayerName();
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * obtiene la informacion del jugador ganador
+     * @return devuelve el nombre del ganador
+     */
+    public String getGanador() {
+        return ganador;
+    }
+    
+    /**
+     * prepara el siguiente turno y lanzamiento
+     */
     public void lanzamientoSet(){
         lanzamiento = true;
         siguiente = true;
     }
     
-    public void chequear(JButton boton){
+    /**
+     * Checkea si se lanzo el dado o no, si lo hizodaun mensaje, sino simula el 
+     * lanzamiento mostrandolo por pantalla
+     * @param boton se configura para que muestre el valor del dado
+     * @param preg realiza el cambio en la pregunta segun el numero que salga.
+     * @return devuelve si se sale de laventana para presentar al ganador o no
+     */
+    public boolean chequear(JButton boton, JTextArea preg){
         if(lanzamiento == false){
             JOptionPane.showMessageDialog(null, "Lanza el Dado Primero");
         }else{
             turnos(Integer.parseInt(boton.getText()));
             boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zzz/dados-04.gif")));
+            preg.setText("");
             siguiente = false;
         }
+        return winer();
     }
     
-    public int puntuacion(int caraDado){
-        int puntos = 0;
-        if(caraDado > 0 && caraDado < 3){
-                if((puntos-caraDado) < 0){
-                    puntos= 0;
-                } else{
-                    puntos-= caraDado;
-                }
-        }else{
-                puntos += caraDado;
-        }
-        return puntos;
-    }
-    
-    public void lanzarDado(JButton boton){
+    /**
+     * Simula el lanzamiento del dado, en caso de haber tirado una vez, se bloquea y lanzaun mensaje,
+     * en caso contrario simula el lanzamiento mostrando el valor por pantalla
+     * @param boton se configura el valor del dado a mostrar
+     * @param pregun se cambia la pregunta de la pantalla
+     */
+    public void lanzarDado(JButton boton, JTextArea pregun){
         if(siguiente == true){
             JOptionPane.showMessageDialog(null, "Ya lanzaste el dado");
         }else{
             boton.setIcon(null);
             boton.setText(Integer.toString(d.lanzarDado()));
             lanzamientoSet();
+            cambiarPregunta(pregun);
         }
     }
     
+    /**
+     * Genera la pregunta, leyendola del ArrayList de preguntas
+     * @param preg Ingresa el TextArea a modificar para mostrar la pregunta
+     */
+    public void cambiarPregunta(JTextArea preg){
+        preg.setText(file.azarPregunta());
+    }
+    
+    /**
+     * actualiza los valores de los scores de todos los jugadores
+     * @param score1
+     * @param score2
+     * @param score3
+     * @param score4
+     * @param score5
+     * @param score6
+     * @param score7 
+     */
     public void actualizarLabels(JLabel score1, JLabel score2, JLabel score3, JLabel score4, JLabel score5, JLabel score6, JLabel score7) {
-        switch(turnoJug){
-            case 0:
+                score1.setText(""+p.get(0).getScore());
+                score2.setText(""+p.get(1).getScore());
                 
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
+        switch(p.size()){
             case 3:
+                score3.setText(""+p.get(2).getScore());
                 break;
             case 4:
+                score3.setText(""+p.get(2).getScore());
+                score4.setText(""+p.get(3).getScore());
                 break;
             case 5:
+                score3.setText(""+p.get(2).getScore());
+                score4.setText(""+p.get(3).getScore());
+                score5.setText(""+p.get(4).getScore());
                 break;
             case 6:
+                score3.setText(""+p.get(2).getScore());
+                score4.setText(""+p.get(3).getScore());
+                score5.setText(""+p.get(4).getScore());
+                score6.setText(""+p.get(5).getScore());
                 break;
+            case 7:
+                score3.setText(""+p.get(2).getScore());
+                score4.setText(""+p.get(3).getScore());
+                score5.setText(""+p.get(4).getScore());
+                score6.setText(""+p.get(5).getScore());
+                score7.setText(""+p.get(6).getScore());
+                break;
+                
         }
     }
 }

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author patricio mercado
+ * @author patricio mercado y Javier Vargas
  */
 public class FramPrincipal extends javax.swing.JFrame {
 
@@ -59,6 +59,11 @@ public class FramPrincipal extends javax.swing.JFrame {
         });
 
         salir.setText("Salir");
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,6 +96,11 @@ public class FramPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Manejo del evento del boton Jugar, llama a la clase FramIngr el cual 
+     * recibe los nombre de los jugadores.
+     * @param evt 
+     */
     private void jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarActionPerformed
         // TODO add your handling code here:
         FramIngr fi = new FramIngr();
@@ -98,6 +108,10 @@ public class FramPrincipal extends javax.swing.JFrame {
         fi.setVisible(true);
     }//GEN-LAST:event_jugarActionPerformed
 
+    /**
+     * Boton que acciona el evento paramostrar un Message Dialog con las reglas del juego.
+     * @param evt 
+     */
     private void reglasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reglasActionPerformed
         // TODO add your handling code here:
         
@@ -106,11 +120,24 @@ public class FramPrincipal extends javax.swing.JFrame {
        
     }//GEN-LAST:event_reglasActionPerformed
 
+    /**
+     * Boton que acciona el evento de mostrar los mejores jugadores del juego.
+     * @param evt 
+     */
     private void rankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rankingActionPerformed
         DataManager dm = new DataManager();
         JOptionPane.showMessageDialog(rootPane, dm.ranking());
         // TODO add your handling code here:
     }//GEN-LAST:event_rankingActionPerformed
+
+    /**
+     * boton que acciona la salida del programa.
+     * @param evt 
+     */
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

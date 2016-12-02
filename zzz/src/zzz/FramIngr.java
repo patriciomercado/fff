@@ -7,7 +7,7 @@ package zzz;
 
 /**
  *
- * @author patricio mercado
+ * @author patricio mercado y Javier Vargas
  */
 public class FramIngr extends javax.swing.JFrame {
 
@@ -16,6 +16,10 @@ public class FramIngr extends javax.swing.JFrame {
      */
     private Gamers g = new Gamers();
     
+    /**
+     * Constructor de l clase sin parametros,inicializa los componentes de la ventana y realiza
+     * una limpieza de las labels que no se utilizaran
+     */
     public FramIngr() {
         initComponents();
         g.numJugadores();
@@ -145,6 +149,12 @@ public class FramIngr extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Manejo del evento al presionar el boton listo, el cual guarda los datos introducidos en los textarea
+     * con los nombres de los jugadores, posteriormente los une en un array de String para crear la colleccion
+     * de Jugadores(Players)
+     * @param evt 
+     */
     private void listoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listoActionPerformed
         // TODO add your handling code here:
         

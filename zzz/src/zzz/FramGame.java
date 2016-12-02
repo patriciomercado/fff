@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author patricio mercado
+ * @author patricio mercado y Javier Vargas
  */
 public class FramGame extends javax.swing.JFrame {
 
@@ -17,6 +17,12 @@ public class FramGame extends javax.swing.JFrame {
      * Creates new form FramGame
      */
     private Juego partida;
+    
+    /**
+     * constructor de la clase principal del juego, se le asigna un arraylist que se utilizara con los metodos quitarJLabels, para
+     * quitar los labels de los jugadores y scores que no se utilizaran durante la operacion
+     * @param p ArrayList con el nombre y puntaje de los Jugadores, de tipo Players
+     */
     public FramGame(ArrayList<Player> p) {
         initComponents();
         
@@ -199,13 +205,28 @@ public class FramGame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Evento del boton siguiente, junto a los metodos checkea si ya se ha lanzado eldado y si alguno de los jugadores ya gano eljuego.
+     * en caso de que gane el juego, se muestra la pantalla final.
+     * @param evt ActionEvent para el boton Siguiente
+     */
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
-        partida.chequear(botonDado);
+        boolean estado =partida.chequear(botonDado,pregun);
+        setVisible(estado);
         partida.actualizarLabels(score1,score2,score3,score4,score5,score6,score7);
+        if (estado== false) {
+            FramGanador fg = new FramGanador(partida.getGanador());
+            fg.setVisible(true);
+        } 
+        
     }//GEN-LAST:event_siguienteActionPerformed
 
+    /**
+     * Botonque activa el evento para simular el lanzamiento de un dado
+     * @param evt Evento que captura la accion realizada con el botondado.
+     */
     private void botonDadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDadoActionPerformed
-        partida.lanzarDado(botonDado);
+        partida.lanzarDado(botonDado,pregun);
         
     }//GEN-LAST:event_botonDadoActionPerformed
 

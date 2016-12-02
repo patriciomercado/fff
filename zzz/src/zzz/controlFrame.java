@@ -11,21 +11,30 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author patricio mercado
+ * @author patricio mercado y Javier Vargas
  */
 public class controlFrame {
-    int cantidadJugadores =0;
+    private int cantidadJugadores =0;
 
+    /**
+     * constructor de la clase que define la cantidad de jugadores para el resto de los metodos
+     * @param cantidadJugadores 
+     */
     public controlFrame( int cantidadJugadores) {
        this.cantidadJugadores = cantidadJugadores;
     }
+
     
-    public void correctorJlabels(){
-        switch(cantidadJugadores){
-            case 2:
-                break;
-        }
-    }
+    /**
+     * corrige las labels de los jugadores enla ventana, para ocultar los jugadores incativos de la partida
+     * @param jug1
+     * @param jug2
+     * @param jug3
+     * @param jug4
+     * @param jug5
+     * @param jug6
+     * @param jug7 
+     */
     public void correctorTextField(JTextField jug1,JTextField jug2,JTextField jug3,JTextField jug4,JTextField jug5,JTextField jug6,JTextField jug7){
         switch (cantidadJugadores){
             case 2:
@@ -58,6 +67,18 @@ public class controlFrame {
         }
         
     }
+    
+    /**
+     * Cambia las JLabels por los nombres de los Jugadores Almacenados en el ArrayList de Jugadores
+     * @param p
+     * @param jug1
+     * @param jug2
+     * @param jug3
+     * @param jug4
+     * @param jug5
+     * @param jug6
+     * @param jug7 
+     */
         public void mostrarJugadores(ArrayList<Player> p,JLabel jug1,JLabel jug2,JLabel jug3,JLabel jug4,JLabel jug5,JLabel jug6,JLabel jug7){
                 switch (p.size()){
                     case 2:
@@ -108,6 +129,17 @@ public class controlFrame {
                 }
     }
     
+        /**
+         * Muestra elpuntaje de todos los jugadores
+         * @param p
+         * @param jug1
+         * @param jug2
+         * @param jug3
+         * @param jug4
+         * @param jug5
+         * @param jug6
+         * @param jug7 
+         */
     public void mostrarPuntaje(ArrayList<Player> p,JLabel jug1,JLabel jug2,JLabel jug3,JLabel jug4,JLabel jug5,JLabel jug6,JLabel jug7){
                 switch (p.size()){
                     case 2:
@@ -161,6 +193,17 @@ public class controlFrame {
           
                 }
     }
+    
+    /**
+     * oculta las JLabels de los jugadoresinactivos en la ventana
+     * @param jug1
+     * @param jug2
+     * @param jug3
+     * @param jug4
+     * @param jug5
+     * @param jug6
+     * @param jug7 
+     */
     public void quitarJLabel(JLabel jug1,JLabel jug2,JLabel jug3,JLabel jug4,JLabel jug5,JLabel jug6,JLabel jug7){
         switch (cantidadJugadores){
             case 2:
