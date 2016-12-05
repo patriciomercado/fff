@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package zzz;
+package GoD;
 
 import java.util.ArrayList;
 
@@ -106,7 +106,7 @@ public class FramGame extends javax.swing.JFrame {
         });
 
         botonDado.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        botonDado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zzz/dados-04.gif"))); // NOI18N
+        botonDado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GoD/dados-04.gif"))); // NOI18N
         botonDado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         botonDado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

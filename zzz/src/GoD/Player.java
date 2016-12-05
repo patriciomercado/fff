@@ -1,4 +1,4 @@
-package zzz;
+package GoD;
 /**
  * 
  * @author patricio mercado y Javier Vargas
