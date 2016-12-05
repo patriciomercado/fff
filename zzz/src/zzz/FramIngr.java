@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GoD;
+package zzz;
 
 /**
  *
@@ -46,9 +46,11 @@ public class FramIngr extends javax.swing.JFrame {
         jug7 = new javax.swing.JTextField();
         listo = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jug1.setText("Jugador 1");
         jug1.addActionListener(new java.awt.event.ActionListener() {
@@ -56,6 +58,7 @@ public class FramIngr extends javax.swing.JFrame {
                 jug1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jug1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 83, 89, -1));
 
         jug2.setText("Jugador 2");
         jug2.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +66,7 @@ public class FramIngr extends javax.swing.JFrame {
                 jug2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jug2, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 83, 89, -1));
 
         jug3.setText("Jugador 3");
         jug3.addActionListener(new java.awt.event.ActionListener() {
@@ -70,12 +74,16 @@ public class FramIngr extends javax.swing.JFrame {
                 jug3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jug3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 121, 89, -1));
 
         jug4.setText("Jugador 4");
+        getContentPane().add(jug4, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 121, 89, -1));
 
         jug5.setText("Jugador 5");
+        getContentPane().add(jug5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 159, 89, -1));
 
         jug6.setText("Jugador 6");
+        getContentPane().add(jug6, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 159, 89, -1));
 
         jug7.setText("Jugador 7");
         jug7.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +91,7 @@ public class FramIngr extends javax.swing.JFrame {
                 jug7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jug7, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 197, 89, -1));
 
         listo.setText("Listo");
         listo.addActionListener(new java.awt.event.ActionListener() {
@@ -90,60 +99,15 @@ public class FramIngr extends javax.swing.JFrame {
                 listoActionPerformed(evt);
             }
         });
+        getContentPane().add(listo, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 258, -1, -1));
 
-        jLabel1.setText("Ingrese nombres de los jugadores");
+        jLabel1.setFont(new java.awt.Font("Game of Thrones", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Ingrese   nombres   de   los   jugadores");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 350, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jug7, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                    .addComponent(jug5)
-                    .addComponent(jug3)
-                    .addComponent(jug1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jug6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jug4)
-                        .addComponent(jug2, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)))
-                .addGap(78, 78, 78))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addComponent(listo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jug2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jug1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jug3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jug4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jug6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jug5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jug7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(listo)
-                .addGap(19, 19, 19))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zzz/bar-780x300.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
         setLocationRelativeTo(null);
@@ -187,6 +151,7 @@ public class FramIngr extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jug1;
     private javax.swing.JTextField jug2;
     private javax.swing.JTextField jug3;

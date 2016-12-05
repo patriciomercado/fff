@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GoD;
+package zzz;
 
 import java.util.ArrayList;
 
@@ -61,42 +61,69 @@ public class FramGame extends javax.swing.JFrame {
         pregun = new javax.swing.JTextArea();
         siguiente = new javax.swing.JButton();
         botonDado = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jug1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 11)); // NOI18N
         jug1.setText("jLabel1");
+        getContentPane().add(jug1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 11, -1, -1));
 
+        score1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         score1.setText("jLabel2");
+        getContentPane().add(score1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
+        jug2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jug2.setText("jLabel3");
+        getContentPane().add(jug2, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 11, -1, -1));
 
         score2.setText("jLabel4");
+        getContentPane().add(score2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
+        jug3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jug3.setText("jLabel5");
+        getContentPane().add(jug3, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 11, -1, -1));
 
         score3.setText("jLabel6");
+        getContentPane().add(score3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
 
+        jug4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jug4.setText("jLabel7");
+        getContentPane().add(jug4, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 11, -1, -1));
 
         score4.setText("jLabel8");
+        getContentPane().add(score4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
 
+        jug5.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jug5.setText("jLabel9");
+        getContentPane().add(jug5, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 11, -1, -1));
 
         score5.setText("jLabel0");
+        getContentPane().add(score5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
+        jug6.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jug6.setText("jLabel11");
+        getContentPane().add(jug6, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 11, -1, -1));
 
         score6.setText("jLabel12");
+        getContentPane().add(score6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
 
+        jug7.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jug7.setText("jLabel13");
+        getContentPane().add(jug7, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 11, -1, -1));
 
         score7.setText("jLabel14");
+        getContentPane().add(score7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, -1, -1));
 
         pregun.setEditable(false);
         pregun.setColumns(20);
         pregun.setRows(5);
         jScrollPane1.setViewportView(pregun);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 68, 382, 170));
 
         siguiente.setText("Siguiente");
         siguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -104,102 +131,24 @@ public class FramGame extends javax.swing.JFrame {
                 siguienteActionPerformed(evt);
             }
         });
+        getContentPane().add(siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 252, -1, -1));
 
         botonDado.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        botonDado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GoD/dados-04.gif"))); // NOI18N
+        botonDado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zzz/dados-04.gif"))); // NOI18N
         botonDado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         botonDado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonDadoActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(215, 215, 215)
-                        .addComponent(siguiente))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(38, 38, 38)
-                            .addComponent(jScrollPane1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(botonDado, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(39, 39, 39)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jug1)
-                                .addComponent(score1))
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jug2)
-                                .addComponent(score2))
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jug3)
-                                .addComponent(score3))
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jug4)
-                                .addComponent(score4))
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(score5)
-                                .addComponent(jug5))
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jug6)
-                                .addComponent(score6))
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(score7)
-                                .addComponent(jug7)))))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jug1)
-                            .addComponent(jug2)
-                            .addComponent(jug3)
-                            .addComponent(jug4)
-                            .addComponent(jug5)
-                            .addComponent(jug6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(score1)
-                                .addComponent(score2)
-                                .addComponent(score3)
-                                .addComponent(score4)
-                                .addComponent(score5))
-                            .addComponent(score6, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jug7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(score7)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(botonDado, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(siguiente)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
+        getContentPane().add(botonDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 109, -1, 81));
         botonDado.getAccessibleContext().setAccessibleName("cdd");
         botonDado.getAccessibleContext().setAccessibleDescription("111");
+
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 530, 300));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zzz/aaa.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 370));
 
         pack();
         setLocationRelativeTo(null);
@@ -211,6 +160,7 @@ public class FramGame extends javax.swing.JFrame {
      * @param evt ActionEvent para el boton Siguiente
      */
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
+        
         boolean estado =partida.chequear(botonDado,pregun);
         setVisible(estado);
         partida.actualizarLabels(score1,score2,score3,score4,score5,score6,score7);
@@ -233,6 +183,8 @@ public class FramGame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonDado;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jug1;
     private javax.swing.JLabel jug2;

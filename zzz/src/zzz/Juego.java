@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GoD;
+package zzz;
 
 import java.util.ArrayList;
 import javax.swing.JButton;
@@ -22,8 +22,8 @@ public class Juego {
     private boolean lanzamiento = false;
     private boolean siguiente = false;
     private DataManager file = new DataManager();
-    private ArrayList<Player> p = new ArrayList<>();
-    Dado d = new Dado();
+    private ArrayList<Player> plaArr = new ArrayList<>();
+    Dado dad = new Dado();
     String ganador = "";
     
     /**
@@ -31,7 +31,7 @@ public class Juego {
      * @param p 
      */
     public Juego(ArrayList<Player> p) {
-        this.p = p;
+        this.plaArr = p;
         
     }
     /**
@@ -39,7 +39,7 @@ public class Juego {
      * @return 
      */
     public ArrayList<Player> getarrayListPlayer(){
-        return p;
+        return plaArr;
     }
     /**
      * devuelve la cantidad de jugadores actuales
@@ -56,10 +56,10 @@ public class Juego {
      */
     public void turnos(int dado){
         
-            p.get(turnoJug).addScore(dado);
+            plaArr.get(turnoJug).addScore(dado);
             lanzamiento = false;
             turnoJug++;
-            if (turnoJug >= p.size()) {
+            if (turnoJug >= plaArr.size()) {
                 turnoJug = 0;
             }
     }
@@ -70,8 +70,8 @@ public class Juego {
      * @return false si gana, true si continua jugando
      */
     public boolean winer(){
-        if (p.get(turnoJug).getScore() >= 50) {
-            this.ganador = p.get(turnoJug).getPlayerName();
+        if (plaArr.get(turnoJug).getScore() >= 50) {
+            this.ganador = plaArr.get(turnoJug).getPlayerName();
             return false;
         }
         return true;
@@ -123,7 +123,7 @@ public class Juego {
             JOptionPane.showMessageDialog(null, "Ya lanzaste el dado");
         }else{
             boton.setIcon(null);
-            boton.setText(Integer.toString(d.lanzarDado()));
+            boton.setText(Integer.toString(dad.lanzarDado()));
             lanzamientoSet();
             cambiarPregunta(pregun);
         }
@@ -148,34 +148,34 @@ public class Juego {
      * @param score7 
      */
     public void actualizarLabels(JLabel score1, JLabel score2, JLabel score3, JLabel score4, JLabel score5, JLabel score6, JLabel score7) {
-                score1.setText(""+p.get(0).getScore());
-                score2.setText(""+p.get(1).getScore());
+                score1.setText(""+plaArr.get(0).getScore());
+                score2.setText(""+plaArr.get(1).getScore());
                 
-        switch(p.size()){
+        switch(plaArr.size()){
             case 3:
-                score3.setText(""+p.get(2).getScore());
+                score3.setText(""+plaArr.get(2).getScore());
                 break;
             case 4:
-                score3.setText(""+p.get(2).getScore());
-                score4.setText(""+p.get(3).getScore());
+                score3.setText(""+plaArr.get(2).getScore());
+                score4.setText(""+plaArr.get(3).getScore());
                 break;
             case 5:
-                score3.setText(""+p.get(2).getScore());
-                score4.setText(""+p.get(3).getScore());
-                score5.setText(""+p.get(4).getScore());
+                score3.setText(""+plaArr.get(2).getScore());
+                score4.setText(""+plaArr.get(3).getScore());
+                score5.setText(""+plaArr.get(4).getScore());
                 break;
             case 6:
-                score3.setText(""+p.get(2).getScore());
-                score4.setText(""+p.get(3).getScore());
-                score5.setText(""+p.get(4).getScore());
-                score6.setText(""+p.get(5).getScore());
+                score3.setText(""+plaArr.get(2).getScore());
+                score4.setText(""+plaArr.get(3).getScore());
+                score5.setText(""+plaArr.get(4).getScore());
+                score6.setText(""+plaArr.get(5).getScore());
                 break;
             case 7:
-                score3.setText(""+p.get(2).getScore());
-                score4.setText(""+p.get(3).getScore());
-                score5.setText(""+p.get(4).getScore());
-                score6.setText(""+p.get(5).getScore());
-                score7.setText(""+p.get(6).getScore());
+                score3.setText(""+plaArr.get(2).getScore());
+                score4.setText(""+plaArr.get(3).getScore());
+                score5.setText(""+plaArr.get(4).getScore());
+                score6.setText(""+plaArr.get(5).getScore());
+                score7.setText(""+plaArr.get(6).getScore());
                 break;
                 
         }
